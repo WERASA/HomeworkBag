@@ -4,8 +4,11 @@
 public class Text {
     public static void main(String[] args) {
         MyBag a=new MyBag();
-        a.setMbag("asd");
+        a.set("asd");
+        a.set("w");
+        a.set("a");
 
-        System.out.println(a.include("asd"));
+
+        System.out.println(a.getMbag());
     }
 }

@@ -1,10 +1,15 @@
 import java.util.ArrayList;
+import java.util.Collections;
 
 /**
  * Created by lenovo on 2016/11/1.
  */
 public class MyBag<T> implements Bag<T> {
     private  ArrayList mbag  ;
+public MyBag (){
+    mbag=new ArrayList();
+
+    }
 
     public boolean include(Object thing){
         if (mbag.contains(thing))
@@ -19,12 +24,22 @@ public class MyBag<T> implements Bag<T> {
       else
           return false;
     }
-    public  void  setMbag (T thing) {
-        ArrayList bag=new ArrayList();
-        bag.add(thing);
-        this.mbag = bag;
+
+    public  ArrayList set (T thing) {
+
+
+        mbag.add(thing);
+       Collections.shuffle(mbag);
+
+
+        return mbag ;
     }
-    public ArrayList getMbag() {
+
+    public void setMbag(ArrayList mbag) {
+        this.mbag = mbag;
+    }
+
+   public ArrayList getMbag() {
         return mbag;
     }
     }
